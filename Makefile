@@ -59,6 +59,7 @@ $(error Cannot set SGX_DEBUG and SGX_PRERELEASE at the same time!!)
 endif
 endif
 
+SGX_DEBUG=1
 ifeq ($(SGX_DEBUG), 1)
         SGX_COMMON_CFLAGS += -O0 -g
 else

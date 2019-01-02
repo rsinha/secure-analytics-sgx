@@ -352,9 +352,9 @@ void startKMTesting(uint32_t num_data, uint32_t num_features, uint32_t num_class
     
     //delete clusters
     for(int i=0; i<K; i++) {
-        delete [] clusters[i].centroid;
-        delete [] clusters[i].class_prop;
-        delete [] clusters[i].clus_data_sum;
+        //delete [] clusters[i].centroid;
+        //delete [] clusters[i].class_prop;
+        //delete [] clusters[i].clus_data_sum;
     }
     delete [] clusters;
 

@@ -195,15 +195,6 @@ void ecall_pointer_isptr_readonly(buffer_t buf, size_t len)
     strncpy((char*)buf, "0987654321", len);
 }
 
-/* get_buffer_len:
- *   get the length of input buffer 'buf'.
- */
-size_t get_buffer_len(const char* buf)
-{
-    (void)buf;
-    return 10*sizeof(int);
-}
-
 /* ecall_pointer_sizefunc:
  *   call get_buffer_len to determin the length of 'buf'.
  */

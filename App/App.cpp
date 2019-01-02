@@ -285,7 +285,7 @@ data_prop* getDataProperties() {
         prop->num_data = features.at(0);
         prop->num_features = features.at(1);
         prop->num_classes = features.at(2);
-        
+
         f.close();
     }
 
@@ -356,7 +356,7 @@ void ocall_manager(uint32_t iter_size, uint32_t fake_size, uint32_t k_size) {
     **/
 
     //Example: Naive decision tree
-    uint32_t type = 11;
+    uint32_t type = 31;
 
     //First training a model.
     startModelTraining(global_eid, prop->num_data, prop->num_features, prop->num_classes, iter_size, fake_size, k_size, type);
@@ -383,9 +383,10 @@ int SGX_CDECL main(int argc, char *argv[])
     (void)(argc);
     (void)(argv);
 
-    std::string basedir = "/data/"; // Data files directory
+    std::string basedir = "/tmp/data/"; // Data files directory
 
-    std::string files[4] = {"syn003", "fc", "arrhythmia", "defaulter"}; // f: File names
+    //std::string files[4] = {"syn003", "fc", "arrhythmia", "defaulter"}; // f: File names
+    std::string files[1] = {"arrhythmia"}; // f: File names
     std::ofstream outfile; // output file
 
     uint32_t iter_size[4] = {16, 32, 64, 128}; // r: Data chunk size for streaming classification.
@@ -409,15 +410,15 @@ int SGX_CDECL main(int argc, char *argv[])
         }
     
         /* Utilize edger8r attributes */
-        edger8r_array_attributes();
-        edger8r_pointer_attributes();
-        edger8r_type_attributes();
-        edger8r_function_attributes();
+        //edger8r_array_attributes();
+        //edger8r_pointer_attributes();
+        //edger8r_type_attributes();
+        //edger8r_function_attributes();
         
         /* Utilize trusted libraries */
-        ecall_libc_functions();
-        ecall_libcxx_functions();
-        ecall_thread_functions();
+        //ecall_libc_functions();
+        //ecall_libcxx_functions();
+        //ecall_thread_functions();
 
         // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
